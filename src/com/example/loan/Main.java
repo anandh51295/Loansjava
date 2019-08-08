@@ -38,19 +38,19 @@ public class Main {
         int len = loans.size();
         for (int i = 0; i < len; i++) {
             pr(String.valueOf(loans.get(i).getCustomerid()));
-//            for (int j = 0; j < customers.size(); j++) {
-//                if (customers.get(j).getCustomerid() == loans.get(i).getCustomerid()) {
-//                    pr(customers.get(j).getCustomername());
-//                }
-//            }
+            for (int j = 0; j < customers.size(); j++) {
+                if (customers.get(j).getCustomerid() == loans.get(i).getCustomerid()) {
+                    pr(customers.get(j).getCustomername());
+                }
+            }
 
             pr(String.valueOf(loans.get(i).getAccountid()));
             pr(String.valueOf(loans.get(i).getLoantype()));
-//            if (loans.get(i).getLoantype() == 1) {
-//                pr("Home Loan");
-//            } else {
-//                pr("Personal Loan");
-//            }
+            if (loans.get(i).getLoantype() == 1) {
+                pr("Home Loan");
+            } else {
+                pr("Personal Loan");
+            }
             pr(String.valueOf(loans.get(i).getAmount()));
             pr(String.valueOf(loans.get(i).getDate()));
 
@@ -128,6 +128,7 @@ public class Main {
                                 ldate = g.nextLine();
                                 if (!ldate.isEmpty()) {
                                     Loans l = new Loans(lcustid, lacid, lltype, lamount, ldate);
+                                    loans.add(l);
                                     float damount = lamount / 12;
                                     Date date1 = new SimpleDateFormat("dd-MM-yyyy").parse(ldate);
                                     Calendar cal = Calendar.getInstance();
